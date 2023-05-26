@@ -54,7 +54,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-    opacity: 1.0
+    opacity: .75
 
   # Startup Mode (changes require restart)
   #
@@ -105,7 +105,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Fira Code Nerd Font
+    family: JetBrains Mono Nerd Font 
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -144,7 +144,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

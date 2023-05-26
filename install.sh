@@ -142,7 +142,7 @@ function set_wallpaper() {
 		echo "${ylw}Changed directory to $(pwd)${normal}"
 
 		echo "${ylw}Removing some unnecessary files...${normal}"
-		rm -rfv asus Xorg urxvt lf i3/i3status screenshot-20221230-145517Z-all.png nvim/init.vim nvim/coc-settings.json install.sh zsh || {
+		rm -rfv asus Xorg urxvt lf i3/i3status screenshot-20221230-145517Z-all.png install.sh zsh || {
 			echo "${bold}${red}Failed removing directories not needed for the configuration, exiting..."
 			exit 1
 		}

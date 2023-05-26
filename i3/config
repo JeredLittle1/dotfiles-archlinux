@@ -10,7 +10,7 @@
 
 
 # Set Mod Key to Command Key (Mac), Windows Key (Windows)
-set $mod Mod4
+set $mod Mod1
 
 ## APPEARANCE
 
@@ -19,7 +19,7 @@ gaps inner 12
 gaps outer 5
 
 # Hide Title Bar
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -44,7 +44,7 @@ floating_minimum_size 450 x 450
 floating_maximum_size 1920 x 1080
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty 
 
 # start firefox
 bindsym $mod+w exec firefox
