@@ -211,7 +211,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip
 ## DISPLAY SETTINGS
 
 # Start feh to set wallpaper
-exec_always --no-startup-id feh --bg-center --no-xinerama $HOME/Downloads/flowers.png
+exec_always --no-startup-id feh --bg-center --no-xinerama $HOME/.config/images/forest.jpg
 
 # Start Picom Compositor for Effects
 exec --no-startup-id picom --no-vsync
