@@ -62,6 +62,7 @@ function main() {
 function pre_install_checks() {
 	if [[ -d "$CONFIG_DIR" ]]; then
 		echo "${ylw}$CONFIG_DIR does already exist, deleting all files...${normal}"
+		mv $CONFIG_DIR/nvim $HOME 
 		rm -rfv "$CONFIG_DIR"
 	else
 		echo "${ylw}Creating new config directory ($CONFIG_DIR)${normal}"
@@ -73,6 +74,8 @@ function pre_install_checks() {
 		echo "${bold}${red}Failed creating ${CONFIG_DIR}, exiting...${normal}"
 		exit 1
 	}
+
+	mv $HOME/nvim $CONFIG_DIR/
 	echo "${ylw}Done!${normal}"
 
 	# Refreshing XDG user directories
