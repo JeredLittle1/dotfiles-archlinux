@@ -45,6 +45,7 @@ function main() {
 			copy_others
 			set_wallpaper
 			install_shell_tools
+			set_theme
 
 			echo "${bold}${grn}Installation succeeded! Exiting...${normal}"
 			exit 0
@@ -184,6 +185,11 @@ function install_shell_tools() {
 		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles-archlinux.git) into your ~/ folder!${normal}"
 		exit 1
 	fi
+}
+
+function set_theme() {
+	sudo pacman -S python-pywal
+	wal --theme base16-atelier-plateau
 }
 
 main "$@"
