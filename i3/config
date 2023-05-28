@@ -227,7 +227,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip
 exec_always --no-startup-id feh --bg-scale --no-xinerama $HOME/.config/images/mountains2.jpg
 
 # Start Picom Compositor for Effects
-exec --no-startup-id picom 
+exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0
 
 # Exec polybar at startup and after refreshing i3
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
