@@ -33,7 +33,7 @@ font xft:Fira Code Nerd Font 11
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $in i3wm.color0 #f0f0f0
 set_from_resource $ur i3wm.color9 #f0f0f0
-set_from_resource $bg i3wm.color11 #f0f0f0
+set_from_resource $bg i3wm.color7 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -224,7 +224,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip
 ## DISPLAY SETTINGS
 
 # Start feh to set wallpaper
-exec_always --no-startup-id feh --bg-scale --no-xinerama $HOME/.config/images/mountains2.jpg
+exec_always --no-startup-id feh --bg-scale --no-xinerama $HOME/.config/images/space.jpg
 
 # Start Picom Compositor for Effects
 exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0
