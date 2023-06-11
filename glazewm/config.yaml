@@ -5,14 +5,16 @@ gaps:
 general:
   # Whether to show floating windows as always on top.
   show_floating_on_top: false
+  focus_border_color: "#ffffff"
+  focus_border_radius: "5"
 
 bar:
   height: "30px"
   position: "top"
-  opacity: 1.0
-  background: "#20242cc4"
+  opacity: .75
+  background: "#282828"
   foreground: "#ffffff"
-  font_family: "Segoe UI"
+  font_family: "JetBrainsMono Nerd Font"
   font_size: "13px"
   padding: "4px 6px"
   offset_x: "0"
@@ -133,7 +135,7 @@ keybindings:
 
   # Change the focused window to be maximized / unmaximized.
   - command: "toggle maximized"
-    binding: "Alt+X"
+    binding: "Alt+F"
 
   # Minimize focused window.
   - command: "set minimized"
