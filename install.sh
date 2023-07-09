@@ -45,7 +45,7 @@ function main() {
 			copy_others
 			set_wallpaper
 			install_shell_tools
-			set_theme
+			# set_theme
 
 			echo "${bold}${grn}Installation succeeded! Exiting...${normal}"
 			exit 0
