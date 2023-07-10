@@ -15,7 +15,7 @@ RUN pacman -Syu --noconfirm
 # Add a new user
 RUN useradd -m ${USER} \
     && echo "${USER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER} \
-        && chmod 0440 /etc/sudoers.d/${USER}
+    && chmod 0440 /etc/sudoers.d/${USER}
 
 # Switch to the new user
 USER ${USER}
@@ -35,6 +35,7 @@ RUN sudo pacman -S --noconfirm ranger
 RUN sudo pacman -S --noconfirm neovim
 RUN sudo pacman -S --noconfirm unzip
 RUN sudo pacman -S --noconfirm docker
+RUN sudo pacman -S --noconfirm github-cli
 
 # Set zsh as default shell
 RUN sudo chsh -s /bin/zsh
