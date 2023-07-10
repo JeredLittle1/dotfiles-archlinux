@@ -1,5 +1,6 @@
 #!/bin/bash
-# Formatting normal=$(tput sgr0) bold=$(tput bold) red=$(tput setaf 1) grn=$(tput setaf 2) ylw=$(tput setaf 3) gry=$(tput setaf 8) Command line arguments system=$1 Directories CONFIG_DIR=$HOME/.config
+# Formatting normal=$(tput sgr0) bold=$(tput bold) red=$(tput setaf 1) grn=$(tput setaf 2) ylw=$(tput setaf 3) gry=$(tput setaf 8) Command line arguments system=$1 Directories 
+CONFIG_DIR=$HOME/.config
 DOWNLOAD_DIR=$HOME
 
 # Header
