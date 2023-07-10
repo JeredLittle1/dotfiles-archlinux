@@ -72,6 +72,17 @@ RUN echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
 RUN echo 'eval "$(jenv init -)"' >> ~/.zshrc
 RUN /bin/zsh -c "source ~/.zshrc && jenv enable-plugin export"
 
+# AWS CLI
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN sudo ./aws/install
+
+# GCloud CLI
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-437.0.1-linux-x86_64.tar.gz
+RUN tar -xf google-cloud-cli-437.0.1-linux-x86_64.tar.gz
+RUN ./google-cloud-sdk/install.sh
+
+
 # Astrovim
 RUN git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
