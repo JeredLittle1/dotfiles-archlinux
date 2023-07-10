@@ -58,7 +58,7 @@ RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
 RUN echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc 
 RUN echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
-RUN /bin/zsh -c "source ~/.zshrc && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION"
+RUN /bin/zsh -c "source ~/.zshrc && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION && pyenv install 3.7.10"
 
 # terraform (via tfenv)
 RUN git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
