@@ -192,9 +192,9 @@ schemes:
     bright:
       black: "#666666"
       red: "#f14c4c"
-      green: "#23d18b"
+      green: "#0dbc79"
       yellow: "#f5f543"
-      blue: "#3b8eea"
+      blue: "#2472c8"
       magenta: "#d670d6"
       cyan: "#29b8db"
       white: "#e5e5e5"
@@ -375,7 +375,7 @@ schemes:
       white:   '0xe6d5ae'
 
 # Apply the color scheme.
-colors: *gruvbox_material_medium_dark
+colors: *vscode
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
