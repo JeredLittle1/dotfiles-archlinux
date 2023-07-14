@@ -6,7 +6,7 @@ run: build
 	-mkdir ${HOME}/workplace/
 	if [ $$(docker ps -q -f name=local-devel) ]; then \
 		echo "Container local-devel is running. Attaching..."; \
-		docker attach local-devel; \
+		docker exec -it local-devel /bin/zsh; \
 	elif [ $$(docker ps -aq -f status=exited -f name=local-devel) ]; then \
 		echo "Container local-devel exists but stopped. Starting and attaching..."; \
 		docker start local-devel; \
