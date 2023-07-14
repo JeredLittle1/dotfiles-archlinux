@@ -13,13 +13,15 @@ run: build
 		docker attach local-devel; \
 	else \
 		echo "Container does not exist. Running..."; \
-		docker run --name local-devel -h local-devel -v ${HOME}/workplace/:/home/arch/workplace -v local-devel:/home/arch -v "//var/run/docker.sock://var/run/docker.sock" -v ${HOME}:/home/arch/host/ -it archlinux:local-devel; \
+		docker run --name local-devel --network=host -h local-devel -v ${HOME}/workplace/:/home/arch/workplace -v local-devel:/home/arch -v "//var/run/docker.sock://var/run/docker.sock" -v ${HOME}:/home/arch/host/ -it archlinux:local-devel; \
 	fi
-clean: 
-	-docker ps -a -q --filter "ancestor=archlinux:local-devel" | xargs -r docker rm
+remove:
+	-docker ps -a -q --filter "name=local-devel" | xargs -r docker rm
+restart: remove run	
+clean: remove 
 	-docker rmi archlinux:local-devel
 	docker builder prune -f
-rebuild: clean build run
+rebuild: clean build
 prompt:
 	@read -p "WARNING: This will remove any files you have created in the Docker volume which are not synced to your host. Continue? [y/N]: " CONTINUE; \
 				if [ "$$CONTINUE" != "y" ] && [ "$$CONTINUE" != "Y" ]; then \

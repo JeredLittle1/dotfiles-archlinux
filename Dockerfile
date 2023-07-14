@@ -43,6 +43,7 @@ RUN sudo chsh -s /bin/zsh
 # dotfiles
 RUN git clone https://github.com/jl178/dotfiles-archlinux.git
 RUN cd dotfiles-archlinux && echo -e "y" | ./install.sh
+RUN rm -rf dotfiles-archlinux
 
 # Packages not available in AUR
 ## nvm
@@ -77,12 +78,27 @@ RUN /bin/zsh -c "source ~/.zshrc && jenv enable-plugin export"
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN sudo ./aws/install
+RUN rm -rf awscliv2 && rm awscliv2.zip
 
 # GCloud CLI
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-437.0.1-linux-x86_64.tar.gz
 RUN tar -xf google-cloud-cli-437.0.1-linux-x86_64.tar.gz
 RUN ./google-cloud-sdk/install.sh
 
+# Kubectl
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+RUN sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Helm
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# Kind
+RUN [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
+RUN chmod +x ./kind
+RUN sudo mv ./kind /usr/local/bin/kind
+
+# Docker config
+RUN sudo usermod -aG docker $USER
 
 # Astrovim
 RUN git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
