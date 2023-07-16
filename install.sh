@@ -77,29 +77,29 @@ function pre_install_checks() {
 
 # Copying dotfiles from Downloads folder to ~/.config
 function copy_config_files() {
-	if [[ -d $DOWNLOAD_DIR/dotfiles-archlinux ]]; then
+	if [[ -d $DOWNLOAD_DIR/dotfiles ]]; then
 		echo "${ylw}Copying files from ${DOWNLOAD_DIR} to ${CONFIG_DIR}...${normal}"
-		cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/." "$CONFIG_DIR" || {
+		cp -Rfv "$DOWNLOAD_DIR/dotfiles/." "$CONFIG_DIR" || {
 			echo "${bold}${red}Failed copying files from ${DOWNLOAD_DIR} to ${CONFIG_DIR}, exiting...${normal}"
 			exit 1
 		}
 		echo "${ylw}Done!${normal}"
 	else
-		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles-archlinux.git) into your ~/ folder!${normal}"
+		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles.git) into your ~/ folder!${normal}"
 		exit 1
 	fi
 }
 
 # Copying files which target destinations are not in ~/.config
 function copy_others() {
-	if [[ -d $DOWNLOAD_DIR/dotfiles-archlinux ]]; then
+	if [[ -d $DOWNLOAD_DIR/dotfiles ]]; then
 		echo "${ylw}Copying files to other directories${normal}"
 
 		# If user provided command line argument ("utm" or "vbox") then copy X11 files to xorg.conf.d else don't copy anything to xorg.conf.d
 		if [ "$system" == "utm" ]; then
-			sudo cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/Xorg/UTM/." "/etc/X11/xorg.conf.d"
+			sudo cp -Rfv "$DOWNLOAD_DIR/dotfiles/Xorg/UTM/." "/etc/X11/xorg.conf.d"
 		elif [ "$system" == "vbox" ]; then
-			sudo cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/Xorg/VBox/." "/etc/X11/xorg.conf.d"
+			sudo cp -Rfv "$DOWNLOAD_DIR/dotfiles/Xorg/VBox/." "/etc/X11/xorg.conf.d"
 		fi
 
         # If no argument was provided delete Xorg folder from ~/.config
@@ -109,23 +109,23 @@ function copy_others() {
 
 		if [[ ! -d "$HOME/.local/share/rofi" ]]; then
 			mkdir -p "$HOME/.local/share/rofi/themes"
-			cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/rofi/squared-everforest.rasi" "$HOME/.local/share/rofi/themes/squared-everforest.rasi"
+			cp -Rfv "$DOWNLOAD_DIR/dotfiles/rofi/squared-everforest.rasi" "$HOME/.local/share/rofi/themes/squared-everforest.rasi"
 		fi
 
-		cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/Xorg/.xinitrc" "$HOME/.xinitrc"
-		cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/zsh/.zshrc" "$HOME/.zshrc"
+		cp -Rfv "$DOWNLOAD_DIR/dotfiles/Xorg/.xinitrc" "$HOME/.xinitrc"
+		cp -Rfv "$DOWNLOAD_DIR/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
 		echo "${ylw}Done!${normal}"
 	else
-		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles-archlinux.git) into your ~/ folder!${normal}"
+		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles.git) into your ~/ folder!${normal}"
 		exit 1
 	fi
 }
 
 # Copying wallpaper to Downloads folder
 function set_wallpaper() {
-	if [[ -d $DOWNLOAD_DIR/dotfiles-archlinux ]]; then
+	if [[ -d $DOWNLOAD_DIR/dotfiles ]]; then
 		echo "${ylw}Setting wallpaper${normal}"
-		cp -Rfv "$DOWNLOAD_DIR/dotfiles-archlinux/flowers.png" "$DOWNLOAD_DIR/flowers.png"
+		cp -Rfv "$DOWNLOAD_DIR/dotfiles/flowers.png" "$DOWNLOAD_DIR/flowers.png"
 		echo "${ylw}Done!${normal}"
 
 		# Changing directory to ~/.config
@@ -139,13 +139,13 @@ function set_wallpaper() {
 		}
 		echo "${ylw}Done!${normal}"
 	else
-		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles-archlinux.git) into your ~/ folder!${normal}"
+		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles.git) into your ~/ folder!${normal}"
 		exit 1
 	fi
 }
 
 function install_shell_tools() {
-	if [[ -d $DOWNLOAD_DIR/dotfiles-archlinux ]]; then
+	if [[ -d $DOWNLOAD_DIR/dotfiles ]]; then
 		echo "${ylw}Installing shell tools${normal}"
 
 		# ZSH auto suggestions
@@ -169,7 +169,7 @@ function install_shell_tools() {
 			echo "${grn}Ranger devicons is already installed${normal}"
 		fi
 	else
-		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles-archlinux.git) into your ~/ folder!${normal}"
+		echo "${bold}${red}Make sure you cloned (https://github.com/JeredLittle1/dotfiles.git) into your ~/ folder!${normal}"
 		exit 1
 	fi
 }
