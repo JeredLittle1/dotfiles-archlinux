@@ -33,7 +33,7 @@ To attach to the running container from another terminal window, simply execute 
 To simplify this process, consider adding an alias in your `~/.zshrc`, `.bashrc`, `~/.profile`, or any other terminal shell configuration file you use:
 
 ```bash
-alias dev="cd $HOME/dev-containers/ && make build && make run"
+alias dev="cd $HOME/dev-containers/ make run"
 ```
 
 ### Host Machine Installation
