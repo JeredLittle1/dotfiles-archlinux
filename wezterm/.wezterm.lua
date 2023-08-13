@@ -24,6 +24,7 @@ config.keys = {
 config.window_background_opacity = .9
 -- Default program
 config.default_prog = { "powershell.exe", "ubuntu", "-c", "zsh" }
+-- config.default_prog = { "powershell.exe", "ubuntu", "-c", "zsh" }
 config.launch_menu = {
   {
     label = "Windows: WSL (Ubuntu ZSH)",
