@@ -14,7 +14,7 @@ end
 config.color_scheme = 'GruvboxDarkHard'
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
-config.font = wezterm.font("JetBrains Mono Medium")
+config.font = wezterm.font("JetBrains Mono Bold")
 config.font_rules = {
   {
     italic = false,
