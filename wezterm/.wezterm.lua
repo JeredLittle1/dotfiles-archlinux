@@ -39,9 +39,9 @@ config.font_rules = {
 }
 config.font_size = 15.0
 config.keys = {
-  { key = "l", mods = "CTRL", action = wezterm.action.ShowLauncher },
-  { key = '{', mods = 'ALT',  action = act.ActivateTabRelative(-1) },
-  { key = '}', mods = 'ALT',  action = act.ActivateTabRelative(1) },
+  { key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+  { key = '{', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+  { key = '}', mods = 'ALT', action = act.ActivateTabRelative(1) },
 
 }
 config.window_background_opacity = .9
