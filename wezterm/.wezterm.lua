@@ -14,7 +14,30 @@ end
 config.color_scheme = 'GruvboxDarkHard'
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
-config.font = wezterm.font 'JetBrains Mono'
+config.font = wezterm.font("JetBrains Mono Medium")
+config.font_rules = {
+  {
+    italic = false,
+    intensity = "Half",
+    font = wezterm.font("JetBrains Mono Medium"),
+  },
+  {
+    italic = true,
+    intensity = "Half",
+    font = wezterm.font("JetBrains Mono Italic"),
+  },
+  {
+    italic = false,
+    intensity = "Bold",
+    font = wezterm.font("JetBrains Mono Bold"),
+  },
+  {
+    italic = true,
+    intensity = "Bold",
+    font = wezterm.font("JetBrains Mono Bold Italic"),
+  },
+}
+config.font_size = 15.0
 config.keys = {
   { key = "l", mods = "CTRL", action = wezterm.action.ShowLauncher },
   { key = '{', mods = 'ALT',  action = act.ActivateTabRelative(-1) },
@@ -23,8 +46,8 @@ config.keys = {
 }
 config.window_background_opacity = .9
 -- Default program
-config.default_prog = { "powershell.exe", "ubuntu", "-c", "zsh" }
 -- config.default_prog = { "powershell.exe", "ubuntu", "-c", "zsh" }
+config.default_prog = { "/bin/zsh" }
 config.launch_menu = {
   {
     label = "Windows: WSL (Ubuntu ZSH)",
