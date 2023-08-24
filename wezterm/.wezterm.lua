@@ -37,12 +37,12 @@ config.font_rules = {
     font = wezterm.font("JetBrains Mono Bold Italic"),
   },
 }
-config.font_size = 15.0
+config.font_size = 12.0
 config.keys = {
-  { key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
-  { key = '{', mods = 'ALT', action = act.ActivateTabRelative(-1) },
-  { key = '}', mods = 'ALT', action = act.ActivateTabRelative(1) },
-
+  { key = "l", mods = "ALT",        action = wezterm.action.ShowLauncher },
+  { key = '{', mods = 'ALT',        action = act.ActivateTabRelative(-1) },
+  { key = '}', mods = 'ALT',        action = act.ActivateTabRelative(1) },
+  { key = "r", mods = "CTRL|SHIFT", action = "DisableDefaultAssignment" },
 }
 config.window_background_opacity = .9
 -- Default program
