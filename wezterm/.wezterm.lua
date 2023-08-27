@@ -45,8 +45,15 @@ config.keys = {
   { key = "r", mods = "CTRL|SHIFT", action = "DisableDefaultAssignment" },
 }
 config.window_background_opacity = .9
+config.window_padding = {
+  left = 1,
+  right = 1,
+  top = 1,
+  bottom = 1,
+}
+
 -- Default program
--- config.default_prog = { "powershell.exe", "ubuntu", "-c", "zsh" }
+config.default_prog = { "powershell.exe", "ubuntu", "-c", "zsh" }
 -- config.default_prog = { "/bin/zsh" }
 config.launch_menu = {
   {
