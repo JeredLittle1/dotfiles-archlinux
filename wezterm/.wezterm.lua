@@ -11,7 +11,23 @@ if wezterm.config_builder then
 end
 -- This is where you actually apply your config choices
 -- For example, changing the color scheme:
-config.color_scheme = 'GruvboxDarkHard'
+-- config.color_scheme = 'GruvboxDarkHard'
+config.color_schemes = {
+  ["gruvbox_material_dark_hard"] = {
+    foreground = "#D4BE98",
+    background = "#1D2021",
+    cursor_bg = "#D4BE98",
+    cursor_border = "#D4BE98",
+    cursor_fg = "#1D2021",
+    selection_bg = "#D4BE98",
+    selection_fg = "#3C3836",
+
+    ansi = { "#1d2021", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
+    brights = { "#eddeb5", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
+  },
+}
+config.color_scheme = "gruvbox_material_dark_hard"
+-- config.color_scheme = 'One Dark (Gogh)'
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 config.font = wezterm.font("JetBrains Mono Bold")
@@ -44,7 +60,7 @@ config.keys = {
   { key = '}', mods = 'ALT',        action = act.ActivateTabRelative(1) },
   { key = "r", mods = "CTRL|SHIFT", action = "DisableDefaultAssignment" },
 }
-config.window_background_opacity = .9
+config.window_background_opacity = 1.0
 config.window_padding = {
   left = 1,
   right = 1,
