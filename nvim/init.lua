@@ -242,20 +242,22 @@ require('lazy').setup({
     },
   },
 
-  {
-    'nvim-telescope/telescope-file-browser.nvim',
-    config = function()
-      vim.keymap.set('n', '<leader>sb', require "telescope".extensions.file_browser.file_browser,
-        { desc = '[S]earch with File [B]rowser' })
-      vim.keymap.set('n', '<leader>e', require "telescope".extensions.file_browser.file_browser,
-        { desc = 'Toggle File Explorer' })
-    end,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-
-    lazy = false
-  },
+  -- {
+  --   'nvim-telescope/telescope-file-browser.nvim',
+  --   config = function()
+  --     vim.keymap.set('n', '<leader>sb', require "telescope".extensions.file_browser.file_browser,
+  --       { desc = '[S]earch with File [B]rowser' })
+  --     vim.keymap.set('n', '<leader>e', require "telescope".extensions.file_browser.file_browser,
+  --       { desc = 'Toggle File Explorer' })
+  --     vim.keymap.set('n', '<leader>o', require('telescope.builtin').find_files,
+  --     { desc = 'Search Files' })
+  --   end,
+  --   dependencies = {
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --
+  --   lazy = false
+  -- },
 
   {
     -- Highlight, edit, and navigate code
@@ -369,8 +371,6 @@ end, { desc = 'Fuzzily [S]earch in current [B]uffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>o', require('telescope.builtin').find_files,
-  { desc = 'Search Files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
