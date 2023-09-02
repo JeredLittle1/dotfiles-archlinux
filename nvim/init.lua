@@ -46,11 +46,6 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 -- Auto close braces/etc
-vim.api.nvim_set_keymap('i', '(', '()<Left>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '[', '[]<Left>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '{', '{}<Left>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '\'', '\'\'<Left>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '(', '<Esc>`>a)<Esc>`<i(<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '[', '<Esc>`>a]<Esc>`<i[<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '{', '<Esc>`>a}<Esc>`<i{<Esc>', { noremap = true, silent = true })
