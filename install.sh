@@ -3,22 +3,6 @@
 CONFIG_DIR=$HOME/.config
 DOWNLOAD_DIR=$HOME
 
-# Header
-printf "${gry}%s${normal}\n${bold}${grn}%s${normal}\n${bold}${ylw}%s${normal}\n${ylw}%s${normal}\n${gry}%s${normal}\n\n" "
-
-███████╗██╗   ██╗███████╗██████╗ ███████╗ ██████╗ ██████╗ ███████╗███████╗████████╗
-██╔════╝██║   ██║██╔════╝██╔══██╗██╔════╝██╔═══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝
-█████╗  ██║   ██║█████╗  ██████╔╝█████╗  ██║   ██║██████╔╝█████╗  ███████╗   ██║   
-██╔══╝  ╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║   ██║██╔══██╗██╔══╝  ╚════██║   ██║   
-███████╗ ╚████╔╝ ███████╗██║  ██║██║     ╚██████╔╝██║  ██║███████╗███████║   ██║   
-╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   
-
-" \
-	"EVERFOREST CONFIGS FOR ARCH LINUX Version 2.0" \
-	"Author: Arfan Zubi" \
-	"Theme: Sainnhe Park" \
-	"License: 2023 GNU General Public License"
-
 # Installation prompt
 function main() {
 	while true; do
