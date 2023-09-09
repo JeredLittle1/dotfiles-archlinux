@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap('v', "'", "<Esc>`>a'<Esc>`<i'<Esc>", { noremap = true, s
 vim.api.nvim_set_keymap('v', '"', '<Esc>`>a"<Esc>`<i"<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
