@@ -49,7 +49,7 @@ alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; c
 alias z='zathura'
 
 # System aliases
-alias standby='xset dpms force standby' 
+alias standby='xset dpms force standby'
 
 # Colored output
 #alias ls='ls -laGH --color=auto'
@@ -77,6 +77,7 @@ export SAVEHIST=1000
 
 # Setting default Ranger RC to false to avoid loading it twice
 export RANGER_LOAD_DEFAULT_RC='false'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#A9A9A9'
 
 # Loading ZSH modules
 autoload -Uz compinit
