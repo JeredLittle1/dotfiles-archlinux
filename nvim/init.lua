@@ -150,6 +150,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -277,9 +278,9 @@ end
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
+  clangd = {},
+  gopls = {},
+  pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -365,6 +366,7 @@ cmp.setup {
   },
   window = {
     completion = cmp.config.window.bordered(),
+    max_height = 10
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
