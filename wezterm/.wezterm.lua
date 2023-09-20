@@ -12,6 +12,7 @@ end
 -- This is where you actually apply your config choices
 -- For example, changing the color scheme:
 -- config.color_scheme = 'GruvboxDarkHard'
+-- config.default_cursor_style = 'SteadyUnderline'
 config.color_schemes = {
   ["gruvbox_material_dark_hard"] = {
     foreground = "#D4BE98",
@@ -30,6 +31,16 @@ config.color_scheme = "gruvbox_material_dark_hard"
 -- config.color_scheme = 'One Dark (Gogh)'
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
+config.window_frame = {
+  border_left_width = '0.1cell',
+  border_right_width = '0.1cell',
+  border_bottom_height = '0.05cell',
+  border_top_height = '0.05cell',
+  border_left_color = '#D4BE98',
+  border_right_color = '#D4BE98',
+  border_bottom_color = '#D4BE98',
+  border_top_color = '#D4BE98',
+}
 config.font = wezterm.font("JetBrains Mono Bold")
 config.font_rules = {
   {
