@@ -371,3 +371,22 @@ cmp.setup {
 }
 -- vim: ts=2 sts=2 sw=2 et
 --
+local _border = "rounded"
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = _border
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = _border
+  }
+)
+
+vim.diagnostic.config {
+  float = { border = _border }
+}
+vim.api.nvim_command("silent highlight FloatBorder ctermbg=NONE guibg=NONE")
+vim.api.nvim_command("silent highlight NormalFloat ctermbg=NONE guibg=NONE")
