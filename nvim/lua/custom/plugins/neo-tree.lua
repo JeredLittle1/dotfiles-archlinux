@@ -78,8 +78,8 @@ return {
           git_status = {
             symbols = {
               -- Change type
-              added     = "",  -- or "✚", but this is redundant info if you use git_status_colors on the name
-              modified  = "",  -- or "", but this is redundant info if you use git_status_colors on the name
+              added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+              modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
               deleted   = "✖", -- this can only be used in the git_status source
               renamed   = "󰁕", -- this can only be used in the git_status source
               -- Status type
@@ -116,7 +116,7 @@ return {
         -- see `:h neo-tree-custom-commands-global`
         commands = {},
         window = {
-          position = "float",
+          position = "left",
           -- width = 30,
           mapping_options = {
             noremap = true,
@@ -287,5 +287,12 @@ return {
     lazy = false
   },
   vim.keymap.set('n', '<leader>e', '<CMD>Neotree toggle<cr>', { desc = 'Toggle File Explorer' }),
-  vim.keymap.set('n', '<leader>o', '<CMD>Neotree focus<cr>', { desc = 'Switch to File Explorer' })
+  vim.keymap.set('n', '<leader>o', function()
+    if vim.bo.filetype == "neo-tree" then
+      vim.cmd.wincmd "p"
+    else
+      vim.cmd.Neotree "focus"
+    end
+  end
+  , { desc = 'Switch to File Explorer' })
 }
