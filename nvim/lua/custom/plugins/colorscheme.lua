@@ -7,22 +7,22 @@ return {
       vim.cmd.colorscheme 'gruvbox-material'
       vim.cmd "let g:lightline = {'colorscheme' : 'gruvbox-material'}"
       local highlights = {
-        -- Normal = { guibg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
-        -- EndOfBuffer = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
-        -- NormalNC = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
-        -- CursorColumn = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
-        -- CursorLine = { cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
-        -- CursorLineNr = { cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
-        -- LineNr = {},
-        -- SignColumn = {},
-        -- StatusLine = {},
-        -- NeoTreeNormal = { bg = "NONE", ctermbg = "NONE" },
-        -- NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
-        -- NeoTreeEndOfBuffer = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
-        -- WinBar = { bg = "NONE", ctermbg = "NONE" },
-        -- WinBarNC = { bg = "NONE", ctermbg = "NONE" },
-        -- NormalFloat = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
-        -- FloatBorder = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        Normal = { guibg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        EndOfBuffer = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        NormalNC = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        CursorColumn = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        CursorLine = { cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
+        CursorLineNr = { cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
+        LineNr = {},
+        SignColumn = {},
+        StatusLine = {},
+        NeoTreeNormal = { bg = "NONE", ctermbg = "NONE" },
+        NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
+        NeoTreeEndOfBuffer = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        WinBar = { bg = "NONE", ctermbg = "NONE" },
+        WinBarNC = { bg = "NONE", ctermbg = "NONE" },
+        NormalFloat = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+        FloatBorder = { bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
       }
       for group, styles in pairs(highlights) do
         local style_str = ''

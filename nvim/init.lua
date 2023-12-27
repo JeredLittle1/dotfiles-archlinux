@@ -390,3 +390,36 @@ vim.diagnostic.config {
 }
 vim.api.nvim_command("silent highlight FloatBorder ctermbg=NONE guibg=NONE")
 vim.api.nvim_command("silent highlight NormalFloat ctermbg=NONE guibg=NONE")
+local highlights = {
+  Normal = { guibg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  EndOfBuffer = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  NormalNC = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  CursorColumn = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  CursorLine = { guibg = "NONE", cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
+  CursorLineNr = { guibg = "NONE", cterm = {}, ctermbg = "NONE", ctermfg = "NONE" },
+  LineNr = {},
+  SignColumn = {},
+  StatusLine = {},
+  NeoTreeNormal = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  NeoTreeNormalNC = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  NeoTreeEndOfBuffer = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  WinBar = { guibg = "NONE", bg = "NONE", ctermbg = "NONE" },
+  WinBarNC = { guibg = "NONE", bg = "NONE", ctermbg = "NONE" },
+  NormalFloat = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+  FloatBorder = { guibg = "NONE", bg = "NONE", ctermbg = "NONE", ctermfg = "NONE" },
+}
+for group, styles in pairs(highlights) do
+  local style_str = ''
+  for key, value in pairs(styles) do
+    if type(value) == "table" then
+      for _, attr in ipairs(value) do
+        style_str = style_str .. ' ' .. key .. '=' .. attr
+      end
+    elseif value ~= "NONE" then
+      style_str = style_str .. ' ' .. key .. '=' .. value
+    elseif (key == "guifg" or key == "guibg" or key == "gui") then
+      style_str = style_str .. ' ' .. key .. '=NONE'
+    end
+  end
+  vim.api.nvim_command('silent highlight ' .. group .. style_str)
+end
